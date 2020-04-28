@@ -6,20 +6,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 
-/**
- * @Description: 中金支付宝退款
- * @ClassName: ReturnByAlipayToCicc
- * @Author: dzt
- * @CreateDate: 2019/1/14 11:14
- * @UpdateUser: dzt
- * @UpdateDate: 2019/1/14 11:14
- * @UpdateRemark: 修改备注
- * @Version: 1.0
- */
 public class ReturnByAlipayToCicc extends RefundWay {
-    private static final Logger log = LoggerFactory.getLogger(ReturnByAlipayToCicc.class);
-    @Override
-    public JSONObject returnPay(String orderCode, String totalFee, String returnAmount, JSONObject returnChangeOrder, String orderFlag,String shopId,int childType,String payType) {
-        return null;
-    }
+
+  private static final Logger log = LoggerFactory.getLogger(ReturnByAlipayToCicc.class);
+
+  @Override
+  public JSONObject returnPay(String orderCode, String totalFee, String returnAmount,
+    JSONObject returnChangeOrder, String orderFlag, String shopId, int childType, String payType) {
+    return null;
+  }
 }
