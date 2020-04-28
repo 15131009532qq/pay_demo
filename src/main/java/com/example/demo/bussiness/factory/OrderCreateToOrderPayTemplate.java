@@ -15,6 +15,12 @@ import java.util.Map;
  * @Version: 1.0
  */
 public abstract class OrderCreateToOrderPayTemplate {
+
+    /**
+     * 订单渠道
+     */
+    public abstract boolean payChannel(String channel);
+
     /**
      * @Description 用于处理客户端的参数信息 参数映射和组装
      *              订单创建之前

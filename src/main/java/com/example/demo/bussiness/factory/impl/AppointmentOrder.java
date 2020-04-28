@@ -13,6 +13,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.Map;
 
+import static com.example.demo.bussiness.model.OrderChannelEnum.APPOINTMENT_CHANNEL;
+
 /**
  * @Description: 预约服务订单
  * @ClassName: AppointmentOrder
@@ -30,6 +32,11 @@ public class AppointmentOrder extends OrderCreateToOrderPayTemplate {
     private PayCallBackFactory payCallBackFactory;
     @Autowired
     private PayWayFactory payWayFactory;
+
+    @Override
+    public boolean payChannel(String channel) {
+        return APPOINTMENT_CHANNEL.getMsg().equals(channel);
+    }
 
     /**
      * @Description 请求参数处理 数据组装

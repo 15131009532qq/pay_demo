@@ -15,6 +15,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import static com.example.demo.bussiness.model.OrderChannelEnum.GOODS_CHANNEL;
+
 /**
  * @Description: 普通商品订单的创建【不包含计次卡】
  * @ClassName: GoodsOrder
@@ -32,6 +34,15 @@ public class GoodsOrder extends OrderCreateToOrderPayTemplate {
     @Autowired
     private PayCallBackFactory payCallBackFactory;
 
+    /**
+     * 订单渠道
+     * @param channel
+     * @return
+     */
+    @Override
+    public boolean payChannel(String channel) {
+        return GOODS_CHANNEL.getType().equals(channel);
+    }
 
     /**
      * 处理请求的参数信息 修改或者组装

@@ -14,6 +14,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Map;
 
+import static com.example.demo.bussiness.model.OrderChannelEnum.MEMBER_STORE_CHANNEL;
+
 /**
  * @Description: 会员储值
  * @ClassName: MemberStore
@@ -31,6 +33,11 @@ public class MemberStore extends OrderCreateToOrderPayTemplate {
     private PayWayFactory payWayFactory;
     @Autowired
     private PayCallBackFactory payCallBackFactory;
+
+    @Override
+    public boolean payChannel(String channel) {
+        return MEMBER_STORE_CHANNEL.getMsg().equals(channel);
+    }
 
     /**
      * 处理请求的参数信息 修改或者组装

@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Map;
 
+import static com.example.demo.bussiness.model.OrderChannelEnum.TIME_CARD_CHANNEL;
+
 /**
  * @Description: 计次卡订单
  * @ClassName: TimeCardOrder
@@ -26,6 +28,11 @@ public class TimeCardOrder extends OrderCreateToOrderPayTemplate {
     private PayWayFactory payWayFactory;
     @Autowired
     private PayCallBackFactory payCallBackFactory;
+
+    @Override
+    public boolean payChannel(String channel) {
+        return TIME_CARD_CHANNEL.getMsg().equals(channel);
+    }
 
     /**
      * @Description 请求参数处理 参数组装
